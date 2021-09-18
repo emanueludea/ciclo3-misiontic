@@ -1,0 +1,13 @@
+Elementos HTML de bloque y de línea: https://www.w3schools.com/html/html_blocks.asp
+
+Diapositivas css: https://www.slideshare.net/andreslara501/presentacin-css
+
+Diapositivas sass: https://www.slideshare.net/laurafolgadogalache/introduccin-a-sass-diseo-de-interfaces-web-desarrollo-de-aplicaciones-web
+
+Posicionamiento absoluto y relativo de elementos con css: https://www.freecodecamp.org/news/css-positioning-position-absolute-and-relative/
+
+
+ul li{
+  color: red;
+  border: 1px solid black;
+}

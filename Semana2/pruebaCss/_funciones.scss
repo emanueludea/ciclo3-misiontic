@@ -1,0 +1,7 @@
+@function multiplicar_tamanio($tamanio_inicial, $veces){
+  @return $tamanio_inicial * $veces;
+}
+
+@function duplicar_tamanio($tamanio_inicial){
+  @return multiplicar_tamanio($tamanio_inicial, 2);
+}

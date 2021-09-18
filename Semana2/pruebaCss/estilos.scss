@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'funciones';
+@mixin formato-texto($color-texto, $tamanio_inicial: 20px, $veces: 2) {
+  color: $color-texto;
+  font-size: multiplicar_tamanio($tamanio_inicial, $veces);
+}
+
+div{
+  @include formato-texto($color-texto, 15px, 2);
+  h3{
+    @include formato-texto(#d5e035, 1em, 6);
+  }
+}
+
+h3{
+  @include formato-texto($color-titulo, 1em, 3);
+}

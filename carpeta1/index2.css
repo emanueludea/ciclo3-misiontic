@@ -1,4 +1,5 @@
 h6 {
+  border: 10px solid red; 
   font-size:60px; 
   /* color: rgb(50, 99, 71); */
   color: #28a171; 
@@ -12,4 +13,15 @@ h6 {
 
 small{
   font-size: 80px;
+}
+
+p {
+  text-align: center;
+}
+
+#miTabla{
+  background-image: url('./eggs-oranges-5-1546938.jpg');
+}
+#miDiv{
+  border: 10px dashed rgb(129, 80, 101); 
 }
