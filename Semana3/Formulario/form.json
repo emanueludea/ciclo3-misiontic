@@ -1,0 +1,6 @@
+{
+  "email": {
+    "valueMissing": "Este es un valor requerido",
+    "typeMismatch": "Esto no es un email válido"
+  }
+}
