@@ -53,7 +53,7 @@ label {
   background-color: yellow;
 }
 
-:invalid input {
-  border: 3px solid red;
+input :invalid {
+  border: 3px dashed red;
   background-color: #ffe6e6;
 }

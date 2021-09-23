@@ -1,39 +1,20 @@
-import * as validation from '../form.json';
-const email = document.getElementById("email");
-email.checkValidity();
+let validations;
+fetch("./js/form.json").then(response => { return response.json(); }).then(data => { validations = data; console.log(validations) });
+// alert('si estoy acá')
+const email = document.querySelector("#email");
 
-email.addEventListener("invalid", function (event) {
-  alert(validation);
+// email.addEventListener("invalid", function () { alert('Es inválido'); });
+
+email.addEventListener("input", emailValidation);
+
+function emailValidation(event) {
+  // console.log(email.validity)
   if (email.validity.valueMissing) {
-    email.setCustomValidity("Este es un valor requerido");
-    // email.setCustomValidity(validation.email.valueMissing);
+    email.setCustomValidity(validations.email.valueMissing);
   } else if (email.validity.typeMismatch) {
-    // email.setCustomValidity("Esto no es un email válido");
-    alert(validation.email.valueMissing);
-    email.setCustomValidity(validation.email.valueMissing);
+    email.setCustomValidity(validations.email.typeMismatch);
   } else {
     email.setCustomValidity("");
   }
-});
-
-/*email.addEventListener("input", function (event) {
-  // alert('hubo un input');
-  if (email.validity.valueMissing) {
-    // alert('no es un email válido');
-    email.setCustomValidity("Este es un valor requerido");
-  } else if (email.validity.typeMismatch) {
-    email.setCustomValidity("Esto no es un email válido");
-  } else {
-    email.setCustomValidity("");
-  }
-});*/
-
-/*email.oninvalid(() => {
-  if (email.validity.valueMissing) {
-    email.setCustomValidity("Este es un valor requerido");
-  } else if (email.validity.typeMismatch) {
-    email.setCustomValidity("Esto no es un email válido");
-  } else {
-    email.setCustomValidity("");
-  }
-});*/
+  email.reportValidity();
+}

@@ -27,7 +27,7 @@ form {
 .form-group {
   display: block;
   margin: 0 auto 1.25rem auto;
-  padding: 0.25rem
+  padding: 0.25rem;
 }
 
 .form-control {
@@ -57,9 +57,9 @@ label {
   background-color: $submit-button-color;
 }
 
-:invalid{
-  input{
-    border: 3px solid $invalid-color;
+input {
+  :invalid {
+    border: 3px dashed $invalid-color;
     background-color: lighten($color: $invalid-color, $amount: 45);
   }
 }

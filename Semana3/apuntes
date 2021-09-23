@@ -1,0 +1,10 @@
+Métodos de la API Document para usar con Javascript (
+https://developer.mozilla.org/en-US/docs/Web/API/Document)
+- Document.getElementById
+  Returns an object reference to the identified element.
+
+- Document.getElementsByClassName()
+  Returns a list of elements with the given class name.
+
+- Document.getElementsByTagName()
+  Returns a list of elements with the given tag name.
