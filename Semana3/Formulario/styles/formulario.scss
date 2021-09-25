@@ -3,6 +3,7 @@ $form-color: rgb(49, 54, 54);
 $label-text-color: aliceblue;
 $submit-button-color: yellow;
 $invalid-color: red;
+$valid-color: green;
 
 body {
   background-color: $body-color;
@@ -57,9 +58,23 @@ label {
   background-color: $submit-button-color;
 }
 
-input {
-  :invalid {
-    border: 3px dashed $invalid-color;
-    background-color: lighten($color: $invalid-color, $amount: 45);
-  }
+input:invalid {
+  border: 3px dashed $invalid-color;
+  background-color: lighten($color: $invalid-color, $amount: 45);
+}
+input:valid {
+  border: 3px none $valid-color;
+  background-color: lighten($color: $valid-color, $amount: 60);
+}
+
+.error {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.75em;
+  background-color: $invalid-color;
+  color: complement($color: $invalid-color);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 3px solid $invalid-color;
 }

@@ -1,6 +1,21 @@
 {
-  "email": {
+  "id": {
     "valueMissing": "Este es un valor requerido",
     "typeMismatch": "Esto no es un email válido"
-  }
+  },
+  "name": {
+    "valueMissing": "No olvides el nombre",
+    "tooShort": "El nombre esta muy corto",
+    "tooLong": "El nombre está muy largo"
+  },
+  "productos": [
+    {
+      "id": "123",
+      "nombre": "carro"
+    },
+    {
+      "id": "sdds",
+      "nombre": "perro"
+    }
+  ]
 }
