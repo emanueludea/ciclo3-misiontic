@@ -10,6 +10,16 @@ class App extends React.Component {
     super(props);
     this.state = { nombre: 'Emanuel' };
 
+    const estudiantes = [{
+      id: '121314',
+      first_name: 'carlos',
+      surname: 'felipe',
+      last_name: 'montoya',
+      second_lastName: 'perez',
+      age: 35,
+      semester: 4
+    }]
+
     this.productos = [
       { categoria: 'categoria 1', nombre: 'producto 1', precio: 25, vendedor: 'carlos', disponible: true },
       { categoria: 'categoria 1', nombre: 'producto 2', precio: 2500, vendedor: 'carlos', disponible: true },
