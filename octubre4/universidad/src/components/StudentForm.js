@@ -1,35 +1,47 @@
-import React from 'react';
+import React from "react";
 class StudentForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.submitForm = this.submitForm.bind(this);
+
+  onDniChange = (evt) => {
+    const student = this.props.student;
+    const newStudent = { ...student, dni: parseInt(evt.target.value) };
+    console.log('cambió el DNI', evt.target.value, student, newStudent);
+    this.props.onFormChange(newStudent);
   }
-  submitForm(event) {
-    event.preventDefault();
-    console.log('vamos a enviar', event);
-    this.props.onFormSubmit(event);
-  }
+
   render() {
+    const student = this.props.student;
+
     return (
-      <form onSubmit={this.submitForm} className="studentForm">
-        <div>
-          <label>Cedula</label>
-          <input type="number" />
-        </div>
-        <div>
-          <label>Nombre completo</label>
-          <input type="text" />
-        </div>
-        <div>
-          <label>Edad</label>
-          <input type="number" />
-        </div>
-        <div>
-          <label>Semestre</label>
-          <input type="number" />
-        </div>
-        <input type="submit" value="enviar" />
-      </form>
+      <div className="formulario" onSubmit={this.props.onSaveStudent}>
+        <form>
+          <div>
+            <label>Cedula</label>
+            <input type="number"
+              value={student.dni}
+              onChange={this.onDniChange} />
+          </div>
+          <div>
+            <label>Nombre</label>
+            <input type="text"
+              value={student.name}
+              onChange={(evt) => this.props.onFormChange({ ...student, name: evt.target.value })} />
+          </div>
+          <div>
+            <label>Edad</label>
+            <input type="number"
+              value={student.age}
+              onChange={(evt) => this.props.onFormChange({ ...student, age: parseInt(evt.target.value) })} />
+          </div>
+          <div>
+            <label>Semestre</label>
+            <input type="number"
+              value={student.semester}
+              onChange={(evt) => this.props.onFormChange({ ...student, semester: parseInt(evt.target.value) })} />
+          </div>
+          <input type="submit" value={student._id === -1 ? 'Crear' : 'Editar'} />
+          <input type="button" value="Limpiar" onClick={this.props.onClearStudent} />
+        </form>
+      </div>
     );
   }
 }

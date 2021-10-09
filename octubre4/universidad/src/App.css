@@ -1,3 +1,17 @@
-.studentForm {
-  margin-bottom: 60px;
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.lista {
+  float: left;
+  width: 60%;
+}
+
+.lista table {
+  border: 1px solid black;
+}
+
+.formulario {
+  float: right;
 }

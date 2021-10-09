@@ -1,0 +1,5 @@
+Aplicación de ejemplo (estudiantes)
+- Crear una versión estática (solo HTML [+css])
+- Identificar y aislar componentes
+- Agregar estado/propiedades
+- Conectar con backend (axios)

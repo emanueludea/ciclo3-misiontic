@@ -1,34 +1,35 @@
 import React from "react";
-
-export class StudentList extends React.Component {
-
+class StudentList extends React.Component {
   render() {
-    const { students } = this.props;
-    console.log('students = ', students);
-    const studentRows = students.map(st => {
-      return (<tr key={st.id}>
-        <td>{st.id}</td>
+    const students = this.props.students;
+    const studentRow = students.map((st, index) => {
+      return <tr key={index}>
+        <td>{st.dni}</td>
         <td>{st.name}</td>
         <td>{st.age}</td>
         <td>{st.semester}</td>
-      </tr>);
+        <td><button type="button" onClick={() => this.props.onEditStudent(st)}>editar</button></td>
+        <td><button type="button" onClick={() => this.props.onDeleteStudent(st._id)}>eliminar</button></td>
+      </tr>
     });
-
-    console.log('studentRows: ', studentRows);
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>Cedula</th>
-            <th>Nombre</th>
-            <th>Edad</th>
-            <th>Semestre</th>
-          </tr>
-        </thead>
-        <tbody>
-          {studentRows}
-        </tbody>
-      </table>
+      <div className="lista">
+        <table>
+          <thead>
+            <tr>
+              <th>cedula</th>
+              <th>nombre</th>
+              <th>edad</th>
+              <th>semestre</th>
+            </tr>
+          </thead>
+          <tbody>
+            {studentRow}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }
+
+export default StudentList;
