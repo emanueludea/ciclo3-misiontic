@@ -1,0 +1,19 @@
+- instalar express
+- crear un index.js
+- importar express
+- crear servidor express (const app=express())
+
+Crear modelo de la colección de Mongo con Mongoose
+
+- instalar mongoose (npm install mongoose)
+- importar mongoose
+- crear esquema ( const collectionSchema = new mongoose.Schema({clave: valor}) )
+- construir el modelo y exportarlo( module.exports = mongoose.model('student', collectionSchema) )
+
+REST
+
+- enrutas las peticiones (GET, PUT, POST, DELETE, etc)
+  - express.json() para obtener el body en req.body (para los POST y PUT)
+  - en req.params obtengo un JSON con los parámetros de l URL
+  - usar cors() para permitir peticiones hechas desde otro servidor (la Aplicación REACT en este caso)
+- poner a escuchar el servidor en un puerto específico ( app.listen(PORT, callback) )

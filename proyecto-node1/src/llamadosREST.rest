@@ -3,29 +3,29 @@
 GET {{urlBase}}/students/ HTTP/1.1
 ###
 
-GET http://localhost:5000/students/615c6a397a543b58b209e157 HTTP/1.1
+GET http://localhost:5000/students/61611d764067cb68a43790b2 HTTP/1.1
 ###
 
 POST http://localhost:5000/students HTTP/1.1
 content-type: application/json
 
 {
-    "dni": 101001,
-    "name": "Jota Jota Pelaez",
-    "age": 56,
+    "dni": 102032,
+    "name": "andres ordoñez",
+    "age": 34,
     "semester": 3
 }
 ###
 
-DELETE {{urlBase}}/students/615f3b17dc6be49091089fde
+DELETE {{urlBase}}/students/6161966804aad3dd4c34c71c
 
 ###
-PUT http://localhost:5000/students/615f3a756d37ee3ee9444b92
+PUT http://localhost:5000/students/61611d764067cb68a43790b2
 content-type: application/json
 
 {
-    "dni": 546589,
-    "name": "Juan Manuel Cuervo",
-    "age": 16,
-    "semester": 3
+    "dni": 989898,
+    "name": "Juan antonio cardona",
+    "age": 17,
+    "semester": 1
 }
