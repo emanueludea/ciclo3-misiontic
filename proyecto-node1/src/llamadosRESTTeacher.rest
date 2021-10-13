@@ -1,0 +1,29 @@
+@urlBase = http://localhost:5000
+
+GET {{urlBase}}/teachers/ HTTP/1.1
+###
+
+GET http://localhost:5000/teachers/61611d764067cb68a43790b2 HTTP/1.1
+###
+
+POST http://localhost:5000/teachers HTTP/1.1
+content-type: application/json
+
+{
+    "dni": 102032,
+    "name": "andres Perea",
+    "phone": 30,
+    "office": "Bloque 3-205"
+}
+###
+
+DELETE {{urlBase}}/teachers/6165cc8b35721b9f6b84eda3
+
+###
+PUT http://localhost:5000/teachers/6165ca948ff494f4fc91dd78
+content-type: application/json
+
+{
+    "phone": 2000000,
+    "office": "No tengo"
+}

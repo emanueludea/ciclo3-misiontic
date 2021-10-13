@@ -4,7 +4,7 @@
   "description": "Esto es un prueba de node",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=env nodemon src/index.js",
+    "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
