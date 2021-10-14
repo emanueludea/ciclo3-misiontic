@@ -24,7 +24,10 @@ export class Students extends React.Component {
     axios.get(this.STUDENTS_URL).then((resp) => {
 
       console.log('Este es la respuesta de listar estudiantes', resp);
-      this.setState({ students: resp.data })
+      const estudiantes = resp.data.filter(st => st.semester === 3);
+      console.log(estudiantes);
+
+      this.setState({ students: estudiantes });
 
     }).catch(err => {
       console.log('Hubo error listando los estudiantes', err);

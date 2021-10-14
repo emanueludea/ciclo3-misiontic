@@ -19,6 +19,7 @@ export class Teachers extends React.Component {
     axios.get(`${this.TEACHERS_URL}`).then((resp) => {
 
       console.log('Este es la respuesta de listar profesores', resp);
+
       this.setState({ teachers: resp.data })
 
     }).catch(err => {

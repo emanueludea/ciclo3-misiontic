@@ -1,11 +1,12 @@
-import React from "react"
+import React from "react";
 
 export class TeacherForm extends React.Component {
+
   render() {
     const teacher = this.props.teacher;
     return (
-      <div className="formulario" onSubmit={this.props.onSave}>
-        <form>
+      <div className="formulario">
+        <form onSubmit={this.validateForm}>
           <div>
             <label>Cedula</label>
             <input type="number"
