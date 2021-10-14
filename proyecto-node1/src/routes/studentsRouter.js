@@ -1,6 +1,5 @@
 var express = require('express');
 var studentsRouter = express.Router();
-//const { listStudents, createStudent, getStudent, modifyStudent, deleteStudent } = require('./controllers/studentsController');
 const studentsController = require('../controllers/studentsController');
 
 studentsRouter.route('/')
@@ -11,5 +10,15 @@ studentsRouter.route('/:id')
   .get(studentsController.getStudent)
   .put(studentsController.modifyStudent)
   .delete(studentsController.deleteStudent);
+
+/* studentsRouter.get('/', studentsController.listStudents)
+
+studentsRouter.get('/:id', studentsController.getStudent);
+
+studentsRouter.post('/', studentsController.createStudent)
+
+studentsRouter.put('/:id', studentsController.modifyStudent);
+
+studentsRouter.delete('/:id', studentsController.deleteStudent); */
 
 module.exports = studentsRouter;

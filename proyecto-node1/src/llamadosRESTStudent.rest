@@ -3,7 +3,7 @@
 GET {{urlBase}}/students/ HTTP/1.1
 ###
 
-GET http://localhost:5000/students/61611d764067cb68a43790b2 HTTP/1.1
+GET http://localhost:5000/students/61611d4f4067cb68a43790ae HTTP/1.1
 ###
 
 POST http://localhost:5000/students HTTP/1.1

@@ -1,14 +1,15 @@
-var express = require('express');
-var teacherRouter = express.Router();
-const teacherController = require('../controllers/teacherController');
+const express = require('express');
+const teachersRouter = express.Router();
 
-teacherRouter.route('/')
-  .get(teacherController.listTeachers)
-  .post(teacherController.createTeacher);
+const teachersController = require('../controllers/teachersController');
 
-teacherRouter.route('/:id')
-  .get(teacherController.getTeacher)
-  .put(teacherController.modifyTeacher)
-  .delete(teacherController.deleteTeacher);
 
-module.exports = teacherRouter;
+teachersRouter.get('/', teachersController.listTeachers);
+
+teachersRouter.post('/', teachersController.createTeacher);
+
+teachersRouter.put('/:id', teachersController.modifyTeacher);
+
+teachersRouter.delete('/:id', teachersController.deleteTeacher);
+
+module.exports = teachersRouter;
