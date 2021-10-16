@@ -17,7 +17,7 @@ export class Login extends React.Component {
   render() {
     return (
       <GoogleLogin
-        clientId="372834564599-u9u4fk30sieg1gfdj3jg78sc02psid3j.apps.googleusercontent.com"
+        clientId="CLIENT_ID_OBTENIDO_DE_GOOGLE_CONSOLE"
         buttonText="Login"
         onSuccess={this.responseGoogle}
         onFailure={this.responseGoogle}

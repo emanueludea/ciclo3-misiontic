@@ -7,6 +7,7 @@ listTeachers = (req, res) => {
 }
 
 createTeacher = (req, res) => {
+  // console.log('voy a crear un teacher')
   teacherModel.create(req.body)
     .then(newTeacher => res.json(newTeacher))
     .catch(err => res.status(500).send(err));

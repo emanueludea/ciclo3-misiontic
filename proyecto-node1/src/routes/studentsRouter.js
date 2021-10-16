@@ -1,6 +1,9 @@
 var express = require('express');
 var studentsRouter = express.Router();
 const studentsController = require('../controllers/studentsController');
+const tokenMiddleware = require('../middlewares/tokenMiddleware');
+
+studentsRouter.use(tokenMiddleware.verifyToken);
 
 studentsRouter.route('/')
   .get(studentsController.listStudents)

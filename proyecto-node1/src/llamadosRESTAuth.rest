@@ -1,0 +1,9 @@
+@urlBase = http://localhost:5000
+
+POST http://localhost:5000/auth/google HTTP/1.1
+content-type: application/json
+
+{
+    "email": "nombre@servicio.com"
+}
+###

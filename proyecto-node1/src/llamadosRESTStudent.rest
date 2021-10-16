@@ -1,6 +1,7 @@
 @urlBase = http://localhost:5000
 
 GET {{urlBase}}/students/ HTTP/1.1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxNjkwY2E5Y2Y3ZDEzNzAzY2Q2MzYxNCIsImVtYWlsIjoiZW1hZmVybW9uQGdtYWlsLmNvbSIsIl9fdiI6MCwiYWRtaW4iOmZhbHNlLCJuYW1lIjoiRW1hbnVlbCBGZXJuYW5kbyBNb250b3lhIEdvbWV6Iiwic3VybmFtZXMiOiJNb250b3lhIEdvbWV6In0sImlhdCI6MTYzNDQwMTI0NiwiZXhwIjoxNjM0NDA0ODQ2fQ.8XZOcBCMYPalf09ijj_uYyOJX9YGap3i99Qiv0QfgW8
 ###
 
 GET http://localhost:5000/students/61611d4f4067cb68a43790ae HTTP/1.1

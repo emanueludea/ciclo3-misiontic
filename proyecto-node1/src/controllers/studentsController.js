@@ -1,8 +1,9 @@
 const studentModel = require('../database/student');
 
 listStudents = (req, res) => {
-  console.log(req.params);
+  // console.log('vamos a listar estudiantes');
   studentModel.find().then((data) => {
+    // console.log(data);
     res.json(data);
   }).catch(err => {
     res.send(err);
