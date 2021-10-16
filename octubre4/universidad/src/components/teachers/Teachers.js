@@ -16,7 +16,11 @@ export class Teachers extends React.Component {
   };
 
   componentDidMount() {
-    axios.get(`${this.TEACHERS_URL}`).then((resp) => {
+    axios.get(`${this.TEACHERS_URL}`, {
+      headers: {
+        'token': sessionStorage.getItem('token')
+      }
+    }).then((resp) => {
 
       console.log('Este es la respuesta de listar profesores', resp);
 
@@ -32,7 +36,11 @@ export class Teachers extends React.Component {
   }
 
   onDelete = (teacherId) => {
-    axios.delete(`${this.TEACHERS_URL}/${teacherId}`).then(data => {
+    axios.delete(`${this.TEACHERS_URL}/${teacherId}`, {
+      headers: {
+        'token': sessionStorage.getItem('token')
+      }
+    }).then(data => {
       this.setState((state, props) => ({
         teachers: this.state.teachers.filter(t => t._id !== teacherId),
         selectedTeacher: this.emptyTeacher
@@ -50,7 +58,11 @@ export class Teachers extends React.Component {
       return;
     }
     if (this.state.selectedTeacher._id === -1) {
-      axios.post(`${this.TEACHERS_URL}`, { ...teacher, _id: null }).then((resp) => {
+      axios.post(`${this.TEACHERS_URL}`, { ...teacher, _id: null }, {
+        headers: {
+          'token': sessionStorage.getItem('token')
+        }
+      }).then((resp) => {
         this.setState((state, props) => ({
           teachers: [...state.teachers, resp.data],
           selectedTeacher: this.emptyTeacher
@@ -59,7 +71,11 @@ export class Teachers extends React.Component {
         console.log('error al hacer post', err);
       });
     } else {
-      axios.put(`${this.TEACHERS_URL}/${teacher._id}`, { ...teacher }).then((resp) => {
+      axios.put(`${this.TEACHERS_URL}/${teacher._id}`, { ...teacher }, {
+        headers: {
+          'token': sessionStorage.getItem('token')
+        }
+      }).then((resp) => {
         this.setState((state, props) => ({
           teachers: state.teachers.map(t => t._id === teacher._id ? teacher : t),
           selectedTeacher: this.emptyTeacher

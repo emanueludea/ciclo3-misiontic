@@ -21,13 +21,17 @@ export class Students extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(this.STUDENTS_URL).then((resp) => {
+    axios.get(this.STUDENTS_URL, {
+      headers: {
+        'token': sessionStorage.getItem('token')
+      }
+    }).then((resp) => {
 
       console.log('Este es la respuesta de listar estudiantes', resp);
       const estudiantes = resp.data.filter(st => st.semester === 3);
       console.log(estudiantes);
 
-      this.setState({ students: estudiantes });
+      this.setState({ students: resp.data });
 
     }).catch(err => {
       console.log('Hubo error listando los estudiantes', err);
@@ -48,7 +52,11 @@ export class Students extends React.Component {
 
   onDeleteStudent(studentId) {
     console.log('quiero eliminar un estudiante', studentId);
-    axios.delete(`${this.STUDENTS_URL}/${studentId}`).then(data => {
+    axios.delete(`${this.STUDENTS_URL}/${studentId}`, {
+      headers: {
+        'token': sessionStorage.getItem('token')
+      }
+    }).then(data => {
       this.setState((state, props) => ({
         students: this.state.students.filter(st => st._id !== studentId),
         selectedStudent: this.emptyStudent
@@ -72,7 +80,11 @@ export class Students extends React.Component {
     }
     if (this.state.selectedStudent._id === -1) {
       console.log('vamos a hacer un POST', this.state.selectedStudent);
-      axios.post(this.STUDENTS_URL, { ...student, _id: null }).then((resp) => {
+      axios.post(this.STUDENTS_URL, { ...student, _id: null }, {
+        headers: {
+          'token': sessionStorage.getItem('token')
+        }
+      }).then((resp) => {
         console.log('Todo bien con el post', resp);
         this.setState((state, props) => ({
           students: [...state.students, resp.data],
@@ -83,7 +95,11 @@ export class Students extends React.Component {
       });
     } else {
       console.log('vamos a hacer un PUT', this.state.selectedStudent);
-      axios.put(`${this.STUDENTS_URL}/${student._id}`, { ...student }).then((resp) => {
+      axios.put(`${this.STUDENTS_URL}/${student._id}`, { ...student }, {
+        headers: {
+          'token': sessionStorage.getItem('token')
+        }
+      }).then((resp) => {
         console.log('Todo bien con el put', resp);
         this.setState((state, props) => ({
           students: state.students.map(st => st._id === student._id ? student : st),
